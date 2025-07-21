@@ -439,7 +439,7 @@ struct k5_command *k5_receive(int fd,int tmout) {
         /* Assume we are out of sync and flush rx buffer by reading everything.
          * This works because the boot message is repeated. */
         while (len>0)
-            len =read_timeout(fd,(unsigned char *)&buf,sizeof(buf),10000);
+            len =read_timeout(fd,(unsigned char *)&buf,sizeof(buf),0);
         return(0);
     }
 
